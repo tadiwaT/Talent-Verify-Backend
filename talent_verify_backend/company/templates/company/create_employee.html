@@ -1,0 +1,8 @@
+<h1>Create New Employee for {{ company.name }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="company_id" value="{{ company_id }}">
+    <button type="submit">Create</button>
+</form>

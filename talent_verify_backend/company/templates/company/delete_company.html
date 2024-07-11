@@ -1,0 +1,14 @@
+<!-- Delete company template -->
+<html>
+  <head>
+    <title>Delete Company</title>
+  </head>
+  <body>
+    <h1>Delete Company</h1>
+    <p>Are you sure you want to delete {{ company.name }}?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Delete</button>
+    </form>
+  </body>
+</html>

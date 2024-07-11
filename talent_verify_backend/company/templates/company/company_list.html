@@ -1,0 +1,22 @@
+
+<!-- Company list template -->
+<!-- company/company_list.html -->
+
+
+{% extends 'base.html' %}
+
+{% block title %}Company List{% endblock %}
+
+{% block content %}
+  <h1>Company List</h1>
+  <ul>
+    {% for company in companies %}
+        <li><a href="{% url 'company_detail' company.pk %}">{{ company.name }}</a></li>
+    {% empty %}
+        <li>No companies found.</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="{% url 'create_company' %}" class="btn btn-primary">Create New Company</a></p>
+{% endblock %}
+

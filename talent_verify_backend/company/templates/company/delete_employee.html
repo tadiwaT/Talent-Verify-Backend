@@ -1,0 +1,9 @@
+<!-- Delete Employee Template -->
+<h1>Delete Employee</h1>
+
+<p>Are you sure you want to delete {{ employee.name }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete Employee</button>
+</form>

@@ -1,0 +1,22 @@
+<!-- update_employee.html -->
+<html>
+  <head>
+    <title>Update Employee</title>
+  </head>
+  <body>
+    <h1>Update Employee: {{ employee.name }} ({{ employee.pk }})</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Update</button>
+    </form>
+    <!-- update_employee.html -->
+
+<!-- ... (rest of the form) ... -->
+
+<p>
+  <button type="submit">Delete---></button>
+  <a href="{% url 'delete_employee' employee.pk %}">Delete</a>
+</p>
+  </body>
+</html>

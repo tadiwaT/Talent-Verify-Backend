@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Update Employee</title>
+  </head>
+  <body>
+    <h1>Update Employee: {{ employee.name }} ({{ employee.pk }})</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!-- Extend the base template to inherit the navigation menu and other common elements -->
+{% extends 'base.html' %}
+
+<!-- Define the page title -->
+{% block title %}Talent Verify - Home{% endblock %}
+
+<!-- Define the page content -->
+{% block content %}
+  <div class="container">
+    <h1>Welcome to Talent Verify</h1>
+    <p>This is a platform for verifying talent and skills.</p>
+
+    <!-- Add a brief introduction or overview of the platform -->
+    <p>Talent Verify is a platform that connects companies with talented individuals.
+        Our platform allows companies to verify the skills and qualifications of potential employees,
+        ensuring a better fit for their organization.</p>
+
+    <!-- Add a call-to-action (CTA) to encourage users to explore the platform -->
+    <p><a href="{% url 'company_list' %}" class="btn btn-primary">Explore Companies</a> <a href="{% url 'employee_list' %}" class="btn btn-primary">Explore Employees</a></p>
+
+    <!-- Add any other relevant content or features you want to highlight on the homepage -->
+  </div>
+{% endblock %}

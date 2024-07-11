@@ -1,0 +1,40 @@
+<!-- company_detail.html -->
+<!-- company_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ company.name }}{% endblock %}
+
+{% block content %}
+  <h1>{{ company.name }}</h1>
+  <ul>
+    <li><strong>Name:</strong> {{ company.name }}</li>
+    <li><strong>Date of Registration:</strong> {{ company.date_of_registration|date:"Y-m-d" }}</li>
+    <li><strong>Company Registration Number:</strong> {{ company.company_registration_number }}</li>
+    <li><strong>Address:</strong> {{ company.address }}</li>
+    <li><strong>Contact Person:</strong> {{ company.contact_person }}</li>
+    <li><strong>Contact Phone:</strong> {{ company.contact_phone }}</li>
+    <li><strong>Email Address:</strong> {{ company.email_address }}</li>
+  </ul>
+
+  <h2>Employees:</h2>
+  <ul>
+    {% for employee in company_employees %}
+      <li>
+        {{ employee.name }} ({{ employee.job_title }})
+        <ul>
+          <li><strong>Email:</strong> {{ employee.email }}</li>
+          <li><strong>Phone Number:</strong> {{ employee.phone_number }}</li>
+          <li><strong>Address:</strong> {{ employee.address }}</li>
+          <!-- Add more fields as needed -->
+        </ul>
+      </li>
+    {% empty %}
+      <li>No employees found for this company.</li>
+    {% endfor %}
+  </ul>
+
+  <p><a href="{% url 'update_company' company.pk %}">Update Company</a></p>
+  <p><a href="{% url 'delete_company' company.pk %}">Delete Company</a></p>
+  <p><a href="{% url 'create_employee' company.pk %}">Create New Employee</a></p>
+
+{% endblock %}

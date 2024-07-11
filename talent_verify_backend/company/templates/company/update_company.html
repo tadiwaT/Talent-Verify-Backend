@@ -1,0 +1,15 @@
+<!-- Update company template -->
+<html>
+  <head>
+    <title>Update Company</title>
+  </head>
+  <body>
+    <h1>Update Company</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>
+

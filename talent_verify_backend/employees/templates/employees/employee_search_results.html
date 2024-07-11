@@ -1,0 +1,43 @@
+{% if error %}
+    <p>Error: {{ error }}</p>
+{% else %}
+    {% if search_results %}
+        <h2>Search Results</h2>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>phone_number</th>
+                <th>address</th>
+                <th>department</th>
+                <th>job_title</th>
+                <th>hire_date</th>
+                <th>company</th>
+                <th>date_of_birth</th>
+                <th>gender</th>
+                <th>emergency_contact_name</th>
+                <th>emergency_contact_phone</th>
+                <th>emergency_contact_relationship</th>
+            </tr>
+            {% for employee in search_results %}
+                <tr>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.phone_number }}</td>
+                    <td>{{ employee.address }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.job_title }}</td>
+                    <td>{{ employee.hire_date }}</td>
+                    <td>{{ employee.company.name }}</td>
+                    <td>{{ employee.date_of_birth }}</td>
+                    <td>{{ employee.gender }}</td>
+                    <td>{{ employee.emergency_contact_name }}</td>
+                    <td>{{ employee.emergency_contact_phone }}</td>
+                    <td>{{ employee.emergency_contact_relationship }}</td>
+                </tr>
+            {% empty %}
+                <p>No employees found that match the search criteria.</p>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endif %}
